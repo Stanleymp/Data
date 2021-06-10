@@ -17,14 +17,13 @@ public class Data {
 		System.out.println("Data " + date.getDate() + "/" + date.getMonth() + "/" + (date.getYear() + 1900));
 		System.out.println("Horário " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n");
 
-		/********************* SimpleDateFormat *********************/
+		/******************* SimpleDateFormat Date *******************/
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); // This format to show the comum user
 		System.out.println("Data " + simpleDateFormat.format(date));
 
 		simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm.ss"); // This format to save in DB
 		System.out.println("Data DB: " + simpleDateFormat.format(date));
-
 		System.out.println("Objeto Data: " + simpleDateFormat.parse("1125-02-17 14:30.0") + "\n");
 
 		/************************* Calendar *************************/
@@ -36,6 +35,17 @@ public class Data {
 		System.out.println("Calendar Data: " + calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH)
 				+ "/" + calendar.get(Calendar.YEAR));
 		System.out.println("Calendar Horário: " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE)
-				+ ":" + calendar.get(Calendar.SECOND));
+				+ ":" + calendar.get(Calendar.SECOND) + "\n");
+
+		/***************** SimpleDateFormat Calendar *****************/
+
+		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+		System.out.println("Calendar Format: " + simpleDateFormat.format(calendar.getTime())); // This format to show
+																								// the comum user.
+
+		simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		System.out.println("Calendar Format DB: " + simpleDateFormat.format(calendar.getTime())); // This format to save
+																									// in DB
+
 	}
 }
