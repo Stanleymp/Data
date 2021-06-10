@@ -40,12 +40,10 @@ public class Data {
 		/***************** SimpleDateFormat Calendar *****************/
 
 		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-		System.out.println("Calendar Format: " + simpleDateFormat.format(calendar.getTime())); // This format to show
-																								// the comum user.
+		System.out.println("Calendar Format: " + simpleDateFormat.format(calendar.getTime())); // Format User Comum
 
 		simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		System.out.println("Calendar Format DB: " + simpleDateFormat.format(calendar.getTime())); // This format to save
-																									// in DB
+		System.out.println("Calendar Format DB: " + simpleDateFormat.format(calendar.getTime())); // Format DB
 
 	}
 }
