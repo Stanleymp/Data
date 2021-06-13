@@ -11,14 +11,16 @@ public class FaixaTempo {
 	public static void main(String[] args) throws ParseException {
 
 		Long diasAusente = ChronoUnit.DAYS.between(LocalDate.parse("2021-06-12"), LocalDate.now());
+		int bonus = 15;
 
 		System.out.println(diasAusente + (diasAusente <= 1 ? " Dia Ausente" : " Dias Ausentes"));
 
-		if (diasAusente >= 10) {
+		if (diasAusente >= bonus) {
 			System.out.println("Bonus Perdido!");
-		} else if (diasAusente > 7) {
+		} else if (diasAusente > (bonus - 3)) {
 			System.out.println("Por favor! Logue na plataforma para atualizar seu Bonus!");
-			System.out.println("Perderá o Bonus em " + (10 - diasAusente) + (diasAusente >= 9 ? " dia" : " dias"));
+			System.out.println(
+					"Perderá o Bonus em " + (bonus - diasAusente) + (diasAusente >= (bonus - 1) ? " dia" : " dias"));
 		} else {
 			System.out.println("Bonus em dia!");
 		}
