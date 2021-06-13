@@ -2,13 +2,19 @@ package ProjetoData;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
+import sun.jvm.hotspot.runtime.Thread;
+
 public class FaixaTempo {
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, InterruptedException {
+
+		/* WORKING WITH DATES */
 
 		Long diasAusente = ChronoUnit.DAYS.between(LocalDate.parse("2021-06-12"), LocalDate.now());
 		int bonus = 15;
@@ -24,6 +30,15 @@ public class FaixaTempo {
 		} else {
 			System.out.println("Bonus em dia!");
 		}
+
+		/* WORKING WITH TIMES */
+
+		Instant inicio = Instant.now();
+		Thread.sleep(2000);
+		Instant ifinal = Instant.now();
+		Duration duracao = Duration.between(inicio, ifinal);
+
+		System.out.println("Duração em Mili Segundos: " + duracao.toMillis());
 
 	}
 }
