@@ -52,6 +52,8 @@ public class FaixaTempo {
 
 		Period periodo = Period.between(dataAntiga, dataNova);
 		System.out.println("O período entre a Data Antiga e a Data Nova é: " + periodo);
-
+		System.out.println("O período entre a Data Antiga e a Data nova é: " + periodo.getYears() + " anos "
+				+ periodo.getMonths() + " meses" + " e " + periodo.getDays() + " dias");
+		System.out.println("Somente Meses: " + periodo.toTotalMonths());
 	}
 }
