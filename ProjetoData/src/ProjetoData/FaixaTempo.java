@@ -54,6 +54,18 @@ public class FaixaTempo {
 		System.out.println("O período entre a Data Antiga e a Data Nova é: " + periodo);
 		System.out.println("O período entre a Data Antiga e a Data nova é: " + periodo.getYears() + " anos "
 				+ periodo.getMonths() + " meses" + " e " + periodo.getDays() + " dias");
-		System.out.println("Somente Meses: " + periodo.toTotalMonths());
+		System.out.println("Somente Meses: " + periodo.toTotalMonths() + "\n");
+
+		/* USING LOCALDATE WITH PLUS TO MANIPALATE DATES */
+
+		LocalDate dataBase = LocalDate.parse("2019-10-05");
+
+		System.out.println("Mais 5 dias: " + (dataBase = dataBase.plusDays(5)));
+		System.out.println("Mias 5 anos: " + (dataBase = dataBase.plusYears(5)));
+		System.out.println("Mais 2 meses: " + (dataBase = dataBase.plusMonths(2)));
+		System.out.println("Menos 1 ano: " + (dataBase = dataBase.minusYears(1)));
+		System.out.println("Menos 1 mês: " + (dataBase = dataBase.minusMonths(1)));
+		System.out.println("Menos 20 dias: " + (dataBase = dataBase.minusDays(20)));
+
 	}
 }
